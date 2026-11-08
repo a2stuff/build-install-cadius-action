@@ -2,7 +2,7 @@ name: 'Build and Install Cadius'
 description: 'Builds and installs the Cadius tool for Apple II ProDOS disk images'
 inputs:
   cadius-repo:
-    description: 'Git repo with Cadius source'
+    description: 'Git repo with Cadius source - defaults to a2-4am'
     required: false
     default: 'https://github.com/a2-4am/cadius'
 runs:
