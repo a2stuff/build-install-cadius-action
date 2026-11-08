@@ -1,10 +1,15 @@
 name: 'Build and Install Cadius'
 description: 'Builds and installs the Cadius tool for Apple II ProDOS disk images'
+inputs:
+  cadius-repo:
+    description: 'Git repo with Cadius source'
+    required: false
+    default: 'https://github.com/a2-4am/cadius'
 runs:
   using: "composite"
   steps:
     - run: >
-        git clone https://github.com/mach-kernel/cadius /tmp/cadius &&
+        git clone ${{ inputs.cadius-repo }} /tmp/cadius &&
         make -C /tmp/cadius &&
         sudo make -C /tmp/cadius install
       shell: bash
